@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  tests:
+    image: golang:1.20-alpine
+    volumes:
+      - ./tests:/code
+    working_dir: /code
+    environment:
+      host: "http://application:8080"
+    links:
+      - application
+    networks:
+      - enrollment
+    command: /bin/sh -c "go mod tidy && go test -v"
