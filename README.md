@@ -12,9 +12,9 @@ This project is a **microservices-based delivery order assignment system** built
 
 ## Tech Stack
 - **Golang** – Backend services.
-- **gRPC / REST API** – Communication between services.
-- **PostgreSQL / Redis** – Persistent and in-memory storage.
-- **Docker & Kubernetes** – Containerization and orchestration.
+- **REST API** – Communication between services.
+- **PostgreSQL** – Persistent storage.
+- **Docker** – Containerization.
 - **CI/CD** – Automated testing and deployment.
 
 ## Getting Started
@@ -26,8 +26,8 @@ This project is a **microservices-based delivery order assignment system** built
 ### Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/delivery-assignment-service.git
-   cd delivery-assignment-service
+   git clone https://github.com/ametow/go-microservice.git
+   cd go-microservice
    ```
 
 2. Run the services:
@@ -51,7 +51,10 @@ go test ./...
 | POST   | `/orders` | Create a new delivery order |
 | GET    | `/orders/{id}` | Get order status |
 | POST   | `/couriers` | Register a courier |
-| GET    | `/couriers/available` | List available couriers |
+| GET    | `/couriers/assignments` | List courier assignments |
+| GET    | `/meta-info/:courier_id` | Courier meta data |
+
+For more refer to code.
 
 ## License
 This project is licensed under the MIT License.
